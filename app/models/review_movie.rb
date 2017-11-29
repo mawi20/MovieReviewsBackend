@@ -1,0 +1,2 @@
+class ReviewMovie < ApplicationRecord
+end
