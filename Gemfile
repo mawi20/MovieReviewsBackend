@@ -2,6 +2,7 @@
 
 source 'https://rubygems.org'
 ruby '2.4.1'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 gem 'active_model_serializers', '~> 0.10.6'
 gem 'bcrypt', '~> 3.1.11'
