@@ -15,8 +15,7 @@ Rails.application.routes.draw do
   # post '/patients/' => 'patients#create'
 
   resources :movies, except: %i[new edit]
-  resources :users, only: %i[index show]
-  resources :review_movies, except: %i[index show]
+  resources :users, only: %i[new edit]
+  resources :review_movies, except: %i[new edit]
   resources :examples, except: %i[new edit]
-  resources :movies, only: [:index, :show, :destroy, :update, :create]
 end
