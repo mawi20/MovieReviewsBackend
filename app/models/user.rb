@@ -2,6 +2,6 @@
 
 class User < ApplicationRecord
   include Authentication
-  has_many :examples
-  has_many :review_movies
+  has_many :movies
+  # has_many :review_movies
 end

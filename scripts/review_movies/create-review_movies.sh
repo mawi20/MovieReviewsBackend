@@ -1,12 +1,16 @@
 #!/bin/bash
 
-curl --include --request POST "http://localhost:4741/review_movies/${ID}" \
+API="${API_ORIGIN:-http://localhost:4741}"
+URL_PATH="/review_movies"
+curl "${API}${URL_PATH}" \
+  --include \
+  --request POST \
   --header "Content-Type: application/json" \
+  --header "Authorization: Token token=$TOKEN" \
   --data '{
-      "review_movies": {
-        "first_name": "'"${FIRST}"'",
-        "last_name": "'"${LAST}"'",
-        "born_on": "'"${BORN}"'",
-        "diagnosis": "'"${DIAGNOSIS}"'"
-      }
+    "review_movies": {
+      "text": "'"${TEXT}"'"
+    }
   }'
+
+echo

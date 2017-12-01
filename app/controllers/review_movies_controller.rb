@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ReviewMoviesController < ApplicationController
-  before_action :set_review_movie, only: [:show, :update, :destroy]
+  before_action :set_review_movie, only: %i[show update destroy]
 
   # GET /review_movies
   def index
@@ -39,13 +41,14 @@ class ReviewMoviesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review_movie
-      @review_movie = ReviewMovie.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def review_movie_params
-      params.require(:review_movie).permit(:rating, :movie_id, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_review_movie
+    @review_movie = ReviewMovie.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def review_movie_params
+    params.require(:review_movie).permit(:rating, :movie_id, :user_id)
+  end
 end
