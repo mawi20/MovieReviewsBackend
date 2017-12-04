@@ -1,5 +1,6 @@
 class MoviesController < OpenReadController
   before_action :set_movie, only: %i[show update destroy]
+  # before_action :authicate_user!, except: %i[index show]
 
   # GET /movies
   def index

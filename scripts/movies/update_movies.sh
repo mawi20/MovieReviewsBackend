@@ -9,10 +9,10 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "movie": {
-      "title": "'"batman"'",
-      "description": "'"uses a bat"'",
+      "title": "'"Superman"'",
+      "description": "'"Has super powers"'",
       "length":"'"2 hours"'",
-      "rating":"'"4"'"
+      "rating":"'"4.5"'"
     }
   }'
 

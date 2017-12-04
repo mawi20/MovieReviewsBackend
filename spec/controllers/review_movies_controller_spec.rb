@@ -42,89 +42,89 @@ end
   # # ReviewMoviesController. Be sure to keep this updated too.
   # let(:valid_session) { {} }
   #
-  # describe "GET #index" do
-  #   it "returns a success response" do
-  #     review_movie = ReviewMovie.create! valid_attributes
-  #     get :index, params: {}, session: valid_session
-  #     expect(response).to be_success
-  #   end
-  # end
-  #
-  # describe "GET #show" do
-  #   it "returns a success response" do
-  #     review_movie = ReviewMovie.create! valid_attributes
-  #     get :show, params: {id: review_movie.to_param}, session: valid_session
-  #     expect(response).to be_success
-  #   end
-  # end
-  #
-  # describe "POST #create" do
-  #   context "with valid params" do
-  #     it "creates a new ReviewMovie" do
-  #       expect {
-  #         post :create, params: {review_movie: valid_attributes}, session: valid_session
-  #       }.to change(ReviewMovie, :count).by(1)
-  #     end
-  #
-  #     it "renders a JSON response with the new review_movie" do
-  #
-  #       post :create, params: {review_movie: valid_attributes}, session: valid_session
-  #       expect(response).to have_http_status(:created)
-  #       expect(response.content_type).to eq('application/json')
-  #       expect(response.location).to eq(review_movie_url(ReviewMovie.last))
-  #     end
-  #   end
-  #
-  #   context "with invalid params" do
-  #     it "renders a JSON response with errors for the new review_movie" do
-  #
-  #       post :create, params: {review_movie: invalid_attributes}, session: valid_session
-  #       expect(response).to have_http_status(:unprocessable_entity)
-  #       expect(response.content_type).to eq('application/json')
-  #     end
-  #   end
-  # end
-  #
-  # describe "PUT #update" do
-  #   context "with valid params" do
-  #     let(:new_attributes) {
-  #       skip("Add a hash of attributes valid for your model")
-  #     }
-  #
-  #     it "updates the requested review_movie" do
-  #       review_movie = ReviewMovie.create! valid_attributes
-  #       put :update, params: {id: review_movie.to_param, review_movie: new_attributes}, session: valid_session
-  #       review_movie.reload
-  #       skip("Add assertions for updated state")
-  #     end
-  #
-  #     it "renders a JSON response with the review_movie" do
-  #       review_movie = ReviewMovie.create! valid_attributes
-  #
-  #       put :update, params: {id: review_movie.to_param, review_movie: valid_attributes}, session: valid_session
-  #       expect(response).to have_http_status(:ok)
-  #       expect(response.content_type).to eq('application/json')
-  #     end
-  #   end
-  #
-  #   context "with invalid params" do
-  #     it "renders a JSON response with errors for the review_movie" do
-  #       review_movie = ReviewMovie.create! valid_attributes
-  #
-  #       put :update, params: {id: review_movie.to_param, review_movie: invalid_attributes}, session: valid_session
-  #       expect(response).to have_http_status(:unprocessable_entity)
-  #       expect(response.content_type).to eq('application/json')
-  #     end
-  #   end
-  # end
-  #
-  # describe "DELETE #destroy" do
-  #   it "destroys the requested review_movie" do
-  #     review_movie = ReviewMovie.create! valid_attributes
-  #     expect {
-  #       delete :destroy, params: {id: review_movie.to_param}, session: valid_session
-  #     }.to change(ReviewMovie, :count).by(-1)
-  #   end
-  # end
+  describe "GET #index" do
+    it "returns a success response" do
+      review_movie = ReviewMovie.create! valid_attributes
+      get :index, params: {}, session: valid_session
+      expect(response).to be_success
+    end
+  end
+
+  describe "GET #show" do
+    it "returns a success response" do
+      review_movie = ReviewMovie.create! valid_attributes
+      get :show, params: {id: review_movie.to_param}, session: valid_session
+      expect(response).to be_success
+    end
+  end
+
+  describe "POST #create" do
+    context "with valid params" do
+      it "creates a new ReviewMovie" do
+        expect {
+          post :create, params: {review_movie: valid_attributes}, session: valid_session
+        }.to change(ReviewMovie, :count).by(1)
+      end
+
+      it "renders a JSON response with the new review_movie" do
+
+        post :create, params: {review_movie: valid_attributes}, session: valid_session
+        expect(response).to have_http_status(:created)
+        expect(response.content_type).to eq('application/json')
+        expect(response.location).to eq(review_movie_url(ReviewMovie.last))
+      end
+    end
+
+    context "with invalid params" do
+      it "renders a JSON response with errors for the new review_movie" do
+
+        post :create, params: {review_movie: invalid_attributes}, session: valid_session
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to eq('application/json')
+      end
+    end
+  end
+
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) {
+        skip("Add a hash of attributes valid for your model")
+      }
+
+      it "updates the requested review_movie" do
+        review_movie = ReviewMovie.create! valid_attributes
+        put :update, params: {id: review_movie.to_param, review_movie: new_attributes}, session: valid_session
+        review_movie.reload
+        skip("Add assertions for updated state")
+      end
+
+      it "renders a JSON response with the review_movie" do
+        review_movie = ReviewMovie.create! valid_attributes
+
+        put :update, params: {id: review_movie.to_param, review_movie: valid_attributes}, session: valid_session
+        expect(response).to have_http_status(:ok)
+        expect(response.content_type).to eq('application/json')
+      end
+    end
+
+    context "with invalid params" do
+      it "renders a JSON response with errors for the review_movie" do
+        review_movie = ReviewMovie.create! valid_attributes
+
+        put :update, params: {id: review_movie.to_param, review_movie: invalid_attributes}, session: valid_session
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(response.content_type).to eq('application/json')
+      end
+    end
+  end
+
+  describe "DELETE #destroy" do
+    it "destroys the requested review_movie" do
+      review_movie = ReviewMovie.create! valid_attributes
+      expect {
+        delete :destroy, params: {id: review_movie.to_param}, session: valid_session
+      }.to change(ReviewMovie, :count).by(-1)
+    end
+  end
 
 end

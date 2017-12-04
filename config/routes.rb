@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   patch '/change-password/:id' => 'users#changepw'
 
   patch '/movies/:id' => 'movies#update'
-  # delete '/movies/:id' => 'movies#destroy'
-  get '/movies/' => 'movies#index'
+  # # delete '/movies/:id' => 'movies#destroy'
+  # get '/movies/' => 'movies#index'
   get '/movies/:id' => 'movies#show'
-  post '/movies/' => 'movies#create'
+  # post '/movies/' => 'movies#create'
 
   resources :movies, except: %i[new edit]
+  resources :review_movies, except: %i[new edit]
   # resources :users, only: %i[new edit]
   # resources :movies, only: %i[index show destroy update create]
   resources :examples, except: %i[new edit]
