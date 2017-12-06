@@ -15,19 +15,6 @@ ActiveRecord::Schema.define(version: 20171201183435) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "article_id"
-    t.index ["article_id"], name: "index_comments_on_article_id"
-  end
-
   create_table "examples", force: :cascade do |t|
     t.text "text", null: false
     t.bigint "user_id", null: false
@@ -43,7 +30,9 @@ ActiveRecord::Schema.define(version: 20171201183435) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "review_movie_id"
     t.bigint "user_id"
+    t.index ["review_movie_id"], name: "index_movies_on_review_movie_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
@@ -65,7 +54,7 @@ ActiveRecord::Schema.define(version: 20171201183435) do
     t.index ["token"], name: "index_users_on_token", unique: true
   end
 
-  add_foreign_key "comments", "articles"
   add_foreign_key "examples", "users"
+  add_foreign_key "movies", "review_movies"
   add_foreign_key "movies", "users"
 end
