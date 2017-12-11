@@ -30,19 +30,19 @@ ActiveRecord::Schema.define(version: 20171201183435) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "review_movie_id"
+    # t.bigint "review_movie_id"
     t.bigint "user_id"
-    t.index ["review_movie_id"], name: "index_movies_on_review_movie_id"
+    # t.index ["review_movie_id"], name: "index_movies_on_review_movie_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
-  create_table "review_movies", force: :cascade do |t|
-    t.integer "rating"
-    t.integer "movie_id"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # create_table "review_movies", force: :cascade do |t|
+  #   t.integer "rating"
+  #   t.integer "movie_id"
+  #   t.integer "user_id"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  # end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -55,6 +55,6 @@ ActiveRecord::Schema.define(version: 20171201183435) do
   end
 
   add_foreign_key "examples", "users"
-  add_foreign_key "movies", "review_movies"
+  # add_foreign_key "movies", "review_movies"
   add_foreign_key "movies", "users"
 end

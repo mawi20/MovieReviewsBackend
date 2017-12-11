@@ -1,18 +1,15 @@
 #!/bin/bash
 
 API="${API_ORIGIN:-http://localhost:4741}"
-URL_PATH="/movies${ID}"
+URL_PATH="/movies"
 curl "${API}${URL_PATH}" \
   --include \
-  --request PATCH \
+  --request POST \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "movie": {
-      "title": "'"Superman"'",
-      "description": "'"Has super powers"'",
-      "length":"'"2 hours"'",
-      "rating":"'"4.5"'"
+    "example": {
+      "text": "'"${TEXT}"'"
     }
   }'
 

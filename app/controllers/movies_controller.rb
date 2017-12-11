@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesController < OpenReadController
   before_action :set_movie, only: %i[show update destroy]
   # before_action :authicate_user!, except: %i[index show]
@@ -19,7 +21,7 @@ class MoviesController < OpenReadController
     @movie = current_user.movies.build(movie_params)
 
     if @movie.save
-      render json: @movie, status: :created
+      render json: @movie, status: :created, location: @movie
     else
       render json: @movie.errors, status: :unprocessable_entity
     end
@@ -30,7 +32,7 @@ class MoviesController < OpenReadController
     @movie = current_user.movies.build(params[:id])
 
     if @movie.update(movie_params)
-      head :no_content
+      render json: @movie
     else
       render json: @movie.errors, status: :unprocessable_entity
     end
@@ -39,17 +41,17 @@ class MoviesController < OpenReadController
   # DELETE /movies/1
   def destroy
     @movie.destroy
-    head :no_content
   end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
+  # private
+  # Use callbacks to share common setup or constraints between actions.
   def set_movie
     @movie = current_user.movies.find(params[:id])
   end
 
-    # Only allow a trusted parameter "white list" through.
-    def movie_params
-      params.require(:movie).permit(:title, :description, :length, :rating)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def movie_params
+    params.require(:movie).permit(:title, :description, :length, :rating)
+  end
+  private :set_movie, :movie_params
 end
