@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   patch '/change-password/:id' => 'users#changepw'
   resources :users, only: %i[index show]
 
-  # patch '/movies/:id' => 'movies#update'
+  patch '/movies/:id' => 'movies#update'
   delete '/movies/:id' => 'movies#destroy'
   get '/movies/' => 'movies#index'
   get '/movies/:id' => 'movies#show'

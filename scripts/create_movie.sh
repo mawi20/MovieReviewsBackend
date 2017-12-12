@@ -8,8 +8,35 @@ curl "${API}${URL_PATH}" \
   --header "Content-Type: application/json" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
-    "example": {
-      "text": "'"${TEXT}"'"
+    "movie": {
+      "title": "'"Thor"'",
+      "description": "'"uses a hammer"'",
+      "length":"'"2 hours"'",
+      "rating":"'"5"'"
+    }
+  }'
+  '{
+    "movie": {
+      "title": "'"Superman"'",
+      "description": "'"uses a cape"'",
+      "length":"'"2 hours"'",
+      "rating":"'"4"'"
+    }
+  }'
+  '{
+    "movie": {
+      "title": "'"Batman"'",
+      "description": "'"uses a bat"'",
+      "length":"'"2.5 hours"'",
+      "rating":"'"4"'"
+    }
+  }'
+  '{
+    "movie": {
+      "title": "'"Entourage"'",
+      "description": "'"Hollywood and Entertainment"'",
+      "length":"'"2 hours"'",
+      "rating":"'"5"'"
     }
   }'
 
