@@ -29,8 +29,6 @@ class MoviesController < OpenReadController
 
   # PATCH/PUT /movies/1
   def update
-    @movie = current_user.movies.build(params[:id])
-
     if @movie.update(movie_params)
       render json: @movie
     else
