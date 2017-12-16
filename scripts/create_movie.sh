@@ -9,35 +9,35 @@ curl "${API}${URL_PATH}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "movie": {
-      "title": "'"Thor"'",
-      "description": "'"uses a hammer"'",
-      "length":"'"2 hours"'",
-      "rating":"'"5"'"
+      "title": "'"${TEXT}"'",
+      "description": "'"${TEXT}"'",
+      "length":"'"${INTEGER}"'",
+      "rating":"'"${INTEGER}"'"
     }
-  }'
-  '{
-    "movie": {
-      "title": "'"Superman"'",
-      "description": "'"uses a cape"'",
-      "length":"'"2 hours"'",
-      "rating":"'"4"'"
-    }
-  }'
-  '{
-    "movie": {
-      "title": "'"Batman"'",
-      "description": "'"uses a bat"'",
-      "length":"'"2.5 hours"'",
-      "rating":"'"4"'"
-    }
-  }'
-  '{
-    "movie": {
-      "title": "'"Entourage"'",
-      "description": "'"Hollywood and Entertainment"'",
-      "length":"'"2 hours"'",
-      "rating":"'"5"'"
-    }
-  }'
+    }'
+  # '{
+  #   "movie": {
+  #     "title": "'"Superman"'",
+  #     "description": "'"uses a cape"'",
+  #     "length":"'"2 hours"'",
+  #     "rating":"'"4"'"
+  #   }
+  # }'
+  # '{
+  #   "movie": {
+  #     "title": "'"Batman"'",
+  #     "description": "'"uses a bat"'",
+  #     "length":"'"2.5 hours"'",
+  #     "rating":"'"4"'"
+  #   }
+  # }'
+  # '{
+  #   "movie": {
+  #     "title": "'"Entourage"'",
+  #     "description": "'"Hollywood and Entertainment"'",
+  #     "length":"'"2 hours"'",
+  #     "rating":"'"5"'"
+  #   }
+  # }'
 
 echo

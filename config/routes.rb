@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :movies
   # resources :review_movies, except: %i[new edit]
-  resources :users, only: %i[new edit]
+  # resources :users, only: %i[new edit]
   # resources :movies, only: %i[index show destroy update create]
   resources :examples, except: %i[new edit]
 end
